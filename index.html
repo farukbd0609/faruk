@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faruk</title>
+	<link rel="icon" href="F (3).jpg">
+    <style>
+        /* Created by Pegasus */
+        .wrap {
+            margin-top: 200px;
+            perspective: 1000px;
+            perspective-origin: 50% 50%;
+        }
+
+        .cube {
+            margin: auto;
+            position: relative;
+            height: 200px;
+            width: 200px;
+            transform-style: preserve-3d;
+        }
+
+        .cube>div {
+            position: absolute;
+            box-sizing: border-box;
+            padding: 10px;
+            height: 100%;
+            width: 100%;
+            opacity: 0.9;
+            background-image: linear-gradient(to right, red, yellow, blue);
+            border: solid 1px #eeeeee;
+            color: #ffffff;
+        }
+
+        .front {
+            transform: translateZ(100px);
+        }
+
+        .back {
+            transform: translateZ(-100px) rotateY(180deg);
+        }
+
+        .right {
+            transform: rotateY(-270deg) translateX(100px);
+            transform-origin: top right;
+        }
+
+        .left {
+            transform: rotateY(270deg) translateX(-100px);
+            transform-origin: center left;
+        }
+
+        .top {
+            transform: rotateX(-270deg) translateY(-100px);
+            transform-origin: top center;
+        }
+
+        .bottom {
+            transform: rotateX(270deg) translateY(100px);
+            transform-origin: bottom center;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        .cube {
+            animation: rotate 10s infinite linear;
+        }
+
+        .wrap:hover .front {
+            transform: translateZ(200px);
+        }
+
+        .wrap:hover .back {
+            transform: translateZ(-200px) rotateY(180deg);
+        }
+
+        .wrap:hover .right {
+            transform: rotateY(-270deg) translateZ(100px) translateX(100px);
+        }
+
+        .wrap:hover .left {
+            transform: rotateY(270deg) translateZ(100px) translateX(-100px);
+        }
+
+        .wrap:hover .top {
+            transform: rotateX(-270deg) translateZ(100px) translateY(-100px);
+        }
+
+        .wrap:hover .bottom {
+            transform: rotateX(270deg) translateZ(100px) translateY(100px);
+        }
+
+        .cube>div {
+            transition: transform 0.2s ease-in;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="cube">
+            <div class="front">
+                <!-- Front Side -->
+                <img src="F (1).jpg" alt="">
+            </div>
+            <div class="back">
+                <!-- Back side -->
+                <img src="F (2).jpg" alt="">
+            </div>
+            <div class="top">
+                <!-- Top side -->
+                <img src="F (3).jpg" alt="">
+            </div>
+            <div class="bottom">
+                <!-- Bottom side -->
+                <img src="F (4).jpg" alt="">
+            </div>
+            <div class="left">
+                <!-- Left side -->
+                <img src="F (5).jpg" alt="">
+            </div>
+            <div class="right">
+                <!-- Right side -->
+                <img src="F (6).jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
